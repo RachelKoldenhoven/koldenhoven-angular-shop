@@ -132,8 +132,19 @@ var teas =
   return {
     getTeas: function () {
       return teas;
+    },
+
+    getCategories: function() {
+      var res = _.flatMap(teas, function(tea) {
+        return tea.categories;
+      });
+      res = _.uniq(res);
+      return res;
     }
+
   }
+
+
 
 
 }]);

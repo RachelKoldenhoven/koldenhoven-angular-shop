@@ -11,6 +11,7 @@ app.controller('MainController', ['$scope', "$location", function($scope, $locat
 app.controller('searchController', ['$scope', "$location", "TeaDataService", function($scope, $location, TeaDataService) {
   $scope.view = {};
   $scope.view.products = TeaDataService.getTeas();
+  $scope.view.categories = TeaDataService.getCategories();
 
 
 

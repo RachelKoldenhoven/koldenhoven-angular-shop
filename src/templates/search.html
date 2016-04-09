@@ -1,11 +1,9 @@
 <div class="search">
     <div class="container">
         <div class="row">
-            <label for="category" class="search-bar">Search By Category</label>
-            <select name="display" ng-model="display" ng-init="display='votes'" id="category" class="search-bar">
-                <option value="votes">Votes</option>
-                <option value="date">Date</option>
-                <option value="title">Title</option>
+            <label for="repeatSelect" class="search-bar">Search By Category</label>
+            <select name="repeatSelect" ng-model="repeatSelect"  id="repeatSelect" class="search-bar">
+                <option value="{{ category }}" ng-repeat="category in view.categories">{{ category }}</option>
             </select>
             <form class="search-bar">
                 <label for="search-by-name" class="search-bar">Search by name:</label>
@@ -27,7 +25,7 @@
             </tr>
             </thead>
             <tbody>
-            <tr class="oneProduct" ng-repeat="product in view.products | orderBy: '-' + display |  filter:searchText">
+            <tr class="oneProduct" ng-repeat="product in view.products | filter:searchText:repeatSelect">
                 <td>
                     <figure>
                         <img ng-src="{{product.imageUrl}}">
@@ -41,7 +39,9 @@
                     <p>Rating: {{ product.rating }}</p>
                     <p>In stock? {{ product.inStock }}</p>
                     <p>Categories:</p>
-                    <ul></ul>
+                    <ul>
+                        <li ng-repeat="category in product.categories">{{ category }}</li>
+                    </ul>
                 </td>
             </tbody>
         </table>
