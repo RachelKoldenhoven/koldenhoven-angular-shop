@@ -1,7 +1,5 @@
 // sample angular code
 
-var app = angular.module('myApp', []);
+var app = angular.module('shoppingCartApp', ['ngRoute']);
 
-app.controller('myController', ['$scope', function($scope) {
-  $scope.greeting = "Hello World!";
-}]);
+
