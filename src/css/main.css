@@ -6,9 +6,25 @@ header{
     background-image: url("http://images.agoramedia.com/everydayhealth/gcms/6-best-teas-for-arthritis-symptoms-722x406.jpg?width=623");
     background-size: cover;
     height:120px;
+    background-position: 0px -200px;
 }
 
 header > h1 {
     padding-left: 10%;
-    color: #52527a;
+    color: #704A19;
+}
+
+.navbar-list {
+    list-style-type: none;
+}
+
+.navbar-item {
+    display: inline-block;
+    padding: 0% 5%;
+
+}
+
+.navbar-item a {
+    text-decoration: none;
+    color: #A43E17;
 }

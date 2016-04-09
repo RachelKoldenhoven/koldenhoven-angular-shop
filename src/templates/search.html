@@ -1,0 +1,18 @@
+<nav class="search">
+    <ul>
+        <div class="dropdown">
+            <button class="dropbtn">Search By Category</button>
+            <div class="dropdown-content">
+                <select name="display" ng-model="display" ng-init="display='votes'">
+                    <option value="votes">Votes</option>
+                    <option value="date">Date</option>
+                    <option value="title">Title</option>
+                </select>
+            </div>
+        </div>
+        <form>
+            <label for="search-by-name">Search by name:</label>
+            <input type="text" class="search" id="search-by-name" placeholder="Search..." ng-model="searchText">
+        </form>
+    </ul>
+</nav>
