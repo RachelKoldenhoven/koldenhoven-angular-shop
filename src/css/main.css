@@ -28,3 +28,7 @@ header > h1 {
     text-decoration: none;
     color: #A43E17;
 }
+
+.search-bar {
+    display: inline-block;
+}

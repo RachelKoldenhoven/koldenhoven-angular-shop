@@ -1,21 +1,51 @@
 <div class="search">
-    <ul>
-        <div class="dropdown">
-            <button class="dropbtn">Search By Category</button>
-            <div class="dropdown-content">
-                <select name="display" ng-model="display" ng-init="display='votes'">
-                    <option value="votes">Votes</option>
-                    <option value="date">Date</option>
-                    <option value="title">Title</option>
-                </select>
-            </div>
+    <div class="container">
+        <div class="row">
+            <label for="category" class="search-bar">Search By Category</label>
+            <select name="display" ng-model="display" ng-init="display='votes'" id="category" class="search-bar">
+                <option value="votes">Votes</option>
+                <option value="date">Date</option>
+                <option value="title">Title</option>
+            </select>
+            <form class="search-bar">
+                <label for="search-by-name" class="search-bar">Search by name:</label>
+                <input type="text" class="search-bar" id="search-by-name" placeholder="Search..." ng-model="searchText">
+            </form>
+            <a class="button" href="/checkout">Checkout | Items in cart: {{}}</a>
         </div>
-        <form>
-            <label for="search-by-name">Search by name:</label>
-            <input type="text" class="search" id="search-by-name" placeholder="Search..." ng-model="searchText">
-        </form>
-    </ul>
+    </div>
 </div>
 
 
-<p>search page</p>
+<main>
+    <div class="row products">
+        <table class="u-full-width">
+            <thead>
+            <tr>
+                <th>Tea</th>
+                <th>Info </th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr class="oneProduct" ng-repeat="product in view.products | orderBy: '-' + display |  filter:searchText">
+                <td>
+                    <figure>
+                        <img ng-src="{{product.imageUrl}}">
+                    </figure>
+                </td>
+                <td>
+                    <h3>{{ product.name }}</h3>
+                    <p>Price: {{ product.price | currency }}</p>
+                    <p>Caffeine Scale: {{ product.caffeineScale}}</p>
+                    <p>Ingredients: {{ product.ingredients}}</p>
+                    <p>Rating: {{ product.rating }}</p>
+                    <p>In stock? {{ product.inStock }}</p>
+                    <p>Categories:</p>
+                    <ul></ul>
+                </td>
+            </tbody>
+        </table>
+        </div>
+    </div>
+</main>
+
