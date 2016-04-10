@@ -155,6 +155,7 @@ var teas =
     },
 
     getCart: function() {
+      console.log(cart);
       return cart;
     }
 

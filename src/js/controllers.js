@@ -21,7 +21,8 @@ app.controller('searchController', ['$scope', "$location", "TeaDataService", fun
 
 }]);
 
-app.controller('checkoutController', ['$scope', "$location", function($scope, $location) {
+app.controller('checkoutController', ['$scope', "$location", "TeaDataService", function($scope, $location, TeaDataService) {
   $scope.view = {};
+  $scope.view.cart = TeaDataService.getCart();
 }]);
 
