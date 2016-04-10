@@ -20,11 +20,18 @@
             <thead>
             <tr>
                 <th>Tea</th>
-                <th>Info </th>
+                <th>Info
+                    <label for="displayByPrice">Display By Price</label>
+                    <select name="display" ng-model="display" id="displayByPrice">
+                        <option value=" -price">Highest</option>
+                        <option value="price">Lowest</option>
+                    </select>
+                </th>
             </tr>
             </thead>
             <tbody>
-            <tr class="oneProduct" ng-repeat="product in view.products | byCategory:view.selectedCategory | filter:searchText">
+            <tr class="oneProduct"
+                ng-repeat="product in view.products | byCategory:view.selectedCategory | filter:searchText | orderBy:  display">
                 <td>
                     <figure>
                         <img ng-src="{{product.imageUrl}}">
