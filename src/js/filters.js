@@ -22,3 +22,22 @@ app.filter('isInStock', function() {
       }
     }
 });
+
+app.filter('cartCount', function() {
+     return function (cart) {
+       return cart.reduce(function(previousCount, cartItem) {
+         return previousCount + cartItem.quantity;
+       }, 0);
+     }
+});
+
+app.filter('totalPrice', function() {
+     return function (cart) {
+       var totalPrice = cart.map(function(cartItem) {
+          return cartItem.price * cartItem.quantity * 0.01;
+       }).reduce(function (prev, curr) {
+            return prev + curr;
+       });
+       return totalPrice;
+     }
+});

@@ -130,7 +130,6 @@ var teas =
   ];
 
   var cart = [];
-  cart.cartCount = 0;
   return {
     getTeas: function () {
       return teas;
@@ -148,13 +147,17 @@ var teas =
     addToCart: function(product) {
       cart.push(product);
       if(!product.quantity) {
-        cart.cartCount +=1;
-      }   else {
-        cart.cartCount += product.quantity;
+        product.quantity =1;
       }
     },
 
     getCart: function() {
+      console.log(cart);
+      return cart;
+    },
+
+    removeFromCart: function(item) {
+      cart.splice(cart.indexOf(item),1);
       console.log(cart);
       return cart;
     }

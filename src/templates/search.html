@@ -9,7 +9,7 @@
                 <label for="search-by-name" class="search-bar">Search by name:</label>
                 <input type="text" class="search-bar" id="search-by-name" placeholder="Search..." ng-model="searchText">
             </form>
-            <a class="button" href="/checkout">Checkout | Items in cart: {{ view.cart.cartCount }}</a>
+            <a class="button" href="/checkout">Checkout | Items in cart: {{ view.cart | cartCount }}</a>
         </div>
     </div>
 </div>

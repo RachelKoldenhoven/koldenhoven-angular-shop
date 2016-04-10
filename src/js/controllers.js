@@ -24,5 +24,8 @@ app.controller('searchController', ['$scope', "$location", "TeaDataService", fun
 app.controller('checkoutController', ['$scope', "$location", "TeaDataService", function($scope, $location, TeaDataService) {
   $scope.view = {};
   $scope.view.cart = TeaDataService.getCart();
+  $scope.removeFromCart = function (item) {
+     TeaDataService.removeFromCart(item);
+  };
 }]);
 
