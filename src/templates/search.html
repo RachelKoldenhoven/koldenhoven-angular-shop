@@ -9,7 +9,7 @@
                 <label for="search-by-name" class="search-bar">Search by name:</label>
                 <input type="text" class="search-bar" id="search-by-name" placeholder="Search..." ng-model="searchText">
             </form>
-            <a class="button" href="/checkout">Checkout | Items in cart: {{}}</a>
+            <a class="button" href="/checkout">Checkout | Items in cart: {{ view.cart.cartCount }}</a>
         </div>
     </div>
 </div>
@@ -41,8 +41,8 @@
                     <ul>
                         <li ng-repeat="category in product.categories">{{ category }}</li>
                     </ul>
-                    <form>
-                        <h4>Quantity:</h4> <input type="number">
+                    <form ng-submit="addToCart(product)">
+                        <h4>Quantity:</h4> <input type="number" ng-model="product.quantity">
                         <input type="submit" value="Add to cart">
                     </form>
                 </td>

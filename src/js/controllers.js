@@ -13,9 +13,10 @@ app.controller('searchController', ['$scope', "$location", "TeaDataService", fun
   $scope.view.products = TeaDataService.getTeas();
   $scope.view.categories = TeaDataService.getCategories();
   $scope.view.selectedCategory = $scope.view.categories[0];
-
-
-
+  $scope.addToCart = function(product) {
+    TeaDataService.addToCart(product);
+  };
+  $scope.view.cart = TeaDataService.getCart();
 
 
 }]);

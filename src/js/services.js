@@ -129,6 +129,8 @@ var teas =
     }
   ];
 
+  var cart = [];
+  cart.cartCount = 0;
   return {
     getTeas: function () {
       return teas;
@@ -141,6 +143,15 @@ var teas =
       res = _.uniq(res);
       res.unshift("all categories");
       return res;
+    },
+
+    addToCart: function(product) {
+      cart.push(product);
+      cart.cartCount += product.quantity;
+    },
+
+    getCart: function() {
+      return cart;
     }
 
   }
