@@ -12,6 +12,7 @@ app.controller('searchController', ['$scope', "$location", "TeaDataService", fun
   $scope.view = {};
   $scope.view.products = TeaDataService.getTeas();
   $scope.view.categories = TeaDataService.getCategories();
+  $scope.view.selectedCategory = $scope.view.categories[0];
 
 
 

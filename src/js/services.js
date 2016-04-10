@@ -139,6 +139,7 @@ var teas =
         return tea.categories;
       });
       res = _.uniq(res);
+      res.unshift("all categories");
       return res;
     }
 

@@ -2,7 +2,7 @@
     <div class="container">
         <div class="row">
             <label for="repeatSelect" class="search-bar">Search By Category</label>
-            <select name="repeatSelect" ng-model="repeatSelect"  id="repeatSelect" class="search-bar">
+            <select name="repeatSelect" ng-model="view.selectedCategory"  id="repeatSelect" class="search-bar">
                 <option value="{{ category }}" ng-repeat="category in view.categories">{{ category }}</option>
             </select>
             <form class="search-bar">
@@ -14,7 +14,6 @@
     </div>
 </div>
 
-
 <main>
     <div class="row products">
         <table class="u-full-width">
@@ -25,7 +24,7 @@
             </tr>
             </thead>
             <tbody>
-            <tr class="oneProduct" ng-repeat="product in view.products | filter:searchText:repeatSelect">
+            <tr class="oneProduct" ng-repeat="product in view.products | byCategory:view.selectedCategory | filter:searchText">
                 <td>
                     <figure>
                         <img ng-src="{{product.imageUrl}}">
@@ -33,16 +32,21 @@
                 </td>
                 <td>
                     <h3>{{ product.name }}</h3>
-                    <p>Price: {{ product.price | currency }}</p>
-                    <p>Caffeine Scale: {{ product.caffeineScale}}</p>
+                    <p>Price: {{ product.price * .01 | currency }}</p>
+                    <p>Caffeine Scale: {{ product.caffeineScale }}</p>
                     <p>Ingredients: {{ product.ingredients}}</p>
                     <p>Rating: {{ product.rating }}</p>
-                    <p>In stock? {{ product.inStock }}</p>
+                    <p>In stock? {{ product.inStock | isInStock }}</p>
                     <p>Categories:</p>
                     <ul>
                         <li ng-repeat="category in product.categories">{{ category }}</li>
                     </ul>
+                    <form>
+                        <h4>Quantity:</h4> <input type="number">
+                        <input type="submit" value="Add to cart">
+                    </form>
                 </td>
+            </tr>
             </tbody>
         </table>
         </div>
