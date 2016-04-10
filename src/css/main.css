@@ -32,3 +32,7 @@ header > h1 {
 .search-bar {
     display: inline-block;
 }
+
+.shopping-cart, .products {
+    color: #704A19;
+}

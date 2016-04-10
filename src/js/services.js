@@ -152,13 +152,11 @@ var teas =
     },
 
     getCart: function() {
-      console.log(cart);
       return cart;
     },
 
     removeFromCart: function(item) {
       cart.splice(cart.indexOf(item),1);
-      console.log(cart);
       return cart;
     }
 
