@@ -42,7 +42,7 @@
                         <li ng-repeat="category in product.categories">{{ category }}</li>
                     </ul>
                     <form ng-submit="addToCart(product)">
-                        <h4>Quantity:</h4> <input type="number" ng-model="product.quantity">
+                        <h4>Quantity:</h4> <input type="number" min="1" ng-model="product.quantity">
                         <input type="submit" value="Add to cart">
                     </form>
                 </td>

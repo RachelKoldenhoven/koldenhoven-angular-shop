@@ -147,7 +147,11 @@ var teas =
 
     addToCart: function(product) {
       cart.push(product);
-      cart.cartCount += product.quantity;
+      if(!product.quantity) {
+        cart.cartCount +=1;
+      }   else {
+        cart.cartCount += product.quantity;
+      }
     },
 
     getCart: function() {
