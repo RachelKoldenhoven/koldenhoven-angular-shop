@@ -27,5 +27,6 @@ app.controller('checkoutController', ['$scope', "$location", "TeaDataService", f
   $scope.removeFromCart = function (item) {
      TeaDataService.removeFromCart(item);
   };
+
 }]);
 

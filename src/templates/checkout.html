@@ -25,14 +25,18 @@
                 <p>Ingredients: {{ item.ingredients }}</p>
                 <p>Rating: {{ item.rating }}</p>
             </td>
-            <td>
+            <td ng-hide="editing">
                 {{ item.quantity }}
+            </td>
+            <td ng-show="editing">
+                    <input type="number" min="1" ng-model="item.quantity">
             </td>
             <td>
                {{ item.price * item.quantity * .01 | currency }}
             </td>
             <td>
-                <button>Edit</button>
+                <button ng-click="editing = true" ng-hide="editing">Edit</button>
+                <button ng-show="editing" ng-click="editing = false">Save</button>
                 <button ng-click="removeFromCart(item)">Delete</button>
             </td>
         </tr>
