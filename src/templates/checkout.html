@@ -1,7 +1,7 @@
 
 <div class="row order">
     <div class="one-half column">
-        <h3>My Shopping Cart</h3>
+        <h3>My Shopping Cart</h3><h3 ng-hide="(view.cart).length"> Is Empty!!</h3>
     </div>
     <div class="one-half column">
         <h3>Order Total: {{ view.cart | totalPrice | currency }}</h3>
@@ -9,7 +9,7 @@
 </div>
 
 <div class="row shopping-cart">
-    <table>
+    <table ng-show="(view.cart).length">
         <thead>
         <tr>
             <th>Product</th>
