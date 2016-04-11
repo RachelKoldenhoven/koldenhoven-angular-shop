@@ -36,3 +36,11 @@ header > h1 {
 .shopping-cart, .products, .search, .order {
     color: #704A19;
 }
+
+table {
+    margin: 5%;
+}
+
+.order {
+    text-align: center;
+}
