@@ -32,12 +32,18 @@ app.filter('cartCount', function() {
 });
 
 app.filter('totalPrice', function() {
+    var totalPrice = 0;
      return function (cart) {
-       var totalPrice = cart.map(function(cartItem) {
-          return cartItem.price * cartItem.quantity * 0.01;
-       }).reduce(function (prev, curr) {
-            return prev + curr;
-       });
+       if(!cart.length) {
+         totalPrice = 0;
+         return totalPrice;
+       }  else {
+         totalPrice = cart.map(function(cartItem) {
+           return cartItem.price * cartItem.quantity * 0.01;
+         }).reduce(function (prev, curr) {
+           return prev + curr;
+         });
+       }
        return totalPrice;
      }
 });
