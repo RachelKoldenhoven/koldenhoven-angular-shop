@@ -3,9 +3,6 @@
  */
 app.config(function($routeProvider, $locationProvider){
   $routeProvider
-    .when('/', {
-      controller: "MainController"
-    })
     .when('/checkout', {
       templateUrl: "templates/checkout.html",
       controller: "checkoutController"
