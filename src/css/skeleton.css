@@ -173,7 +173,7 @@ input[type="button"] {
     display: inline-block;
     height: 38px;
     padding: 0 30px;
-    color: #555;
+    color: #B28F53;
     text-align: center;
     font-size: 11px;
     font-weight: 600;
@@ -184,7 +184,7 @@ input[type="button"] {
     white-space: nowrap;
     background-color: transparent;
     border-radius: 4px;
-    border: 1px solid #bbb;
+    border: 1px solid #B28F53;
     cursor: pointer;
     box-sizing: border-box; }
 .button:hover,
@@ -237,7 +237,7 @@ select {
     height: 38px;
     padding: 6px 10px; /* The 6px vertically centers text on FF, ignored by Webkit */
     background-color: #fff;
-    border: 1px solid #D1D1D1;
+    border: 1px solid #B28F53;
     border-radius: 4px;
     box-shadow: none;
     box-sizing: border-box; }
@@ -326,7 +326,7 @@ th,
 td {
     padding: 12px 15px;
     text-align: left;
-    border: 1px solid #E1E1E1; }
+    border: 1px solid #B28F53; }
 th:first-child,
 td:first-child
 th:last-child,

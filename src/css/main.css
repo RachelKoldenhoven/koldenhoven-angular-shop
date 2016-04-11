@@ -33,6 +33,6 @@ header > h1 {
     display: inline-block;
 }
 
-.shopping-cart, .products {
+.shopping-cart, .products, .search, .order {
     color: #704A19;
 }

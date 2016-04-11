@@ -149,7 +149,6 @@ var teas =
       if(!product.quantity) {
         product.quantity =1;
       }
-      console.log(cart);
     },
 
     getCart: function() {
