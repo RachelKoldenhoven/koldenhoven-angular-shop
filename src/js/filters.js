@@ -39,7 +39,7 @@ app.filter('totalPrice', function() {
          return totalPrice;
        }  else {
          totalPrice = cart.map(function(cartItem) {
-           return cartItem.price * cartItem.quantity * 0.01;
+           return cartItem.product.price * cartItem.quantity * 0.01;
          }).reduce(function (prev, curr) {
            return prev + curr;
          });

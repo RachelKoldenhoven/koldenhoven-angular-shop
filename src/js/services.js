@@ -145,10 +145,14 @@ var teas =
     },
 
     addToCart: function(product) {
-      cart.push(product);
       if(!product.quantity) {
         product.quantity =1;
       }
+      var cartItem = {
+        product: product,
+        quantity: product.quantity
+      };
+      cart.push(cartItem);
     },
 
     getCart: function() {

@@ -21,13 +21,13 @@
         <tbody>
         <tr class="oneProduct" ng-repeat="item in view.cart">
             <td>
-                <h3>{{ item.name }}</h3>
+                <h3>{{ item.product.name }}</h3>
                 <figure>
-                    <img ng-src="{{ item.imageUrl }}">
+                    <img ng-src="{{ item.product.imageUrl }}">
                 </figure>
-                <p>Caffeine Scale: {{ item.caffeineScale }}</p>
-                <p>Ingredients: {{ item.ingredients }}</p>
-                <p>Rating: {{ item.rating }}</p>
+                <p>Caffeine Scale: {{ item.product.caffeineScale }}</p>
+                <p>Ingredients: {{ item.product.ingredients }}</p>
+                <p>Rating: {{ item.product.rating }}</p>
             </td>
             <td ng-hide="editing">
                 {{ item.quantity }}
@@ -36,7 +36,7 @@
                     <input type="number" min="1" ng-model="item.quantity">
             </td>
             <td>
-               {{ item.price * item.quantity * .01 | currency }}
+               {{ item.product.price * item.quantity * .01 | currency }}
             </td>
             <td>
                 <button ng-click="editing = true" ng-hide="editing">Edit</button>
