@@ -146,12 +146,18 @@ var teas =
 
     addToCart: function(product) {
       if(!product.quantity) {
-        product.quantity =1;
+        product.quantity = 1;
       }
       var cartItem = {
         product: product,
         quantity: product.quantity
       };
+      for(var i = 0; i < cart.length; i++) {
+        if(cart[i].product === product) {
+          cart[i].quantity += product.quantity;
+          return;
+        }
+      }
       cart.push(cartItem);
     },
 
